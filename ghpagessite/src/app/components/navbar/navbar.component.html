@@ -1,0 +1,35 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" href="#">{{this.lang.get("->navbar-brand")}}</a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>{{this.lang.get("->navbar-about")}}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>{{this.lang.get("->navbar-projects")}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>{{this.lang.get("->navbar-people")}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>{{this.lang.get("->navbar-contact")}}</a>
+          </li>
+  
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infernitas-se/" target="_blank">
+            <mdb-icon fab icon="github"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="globe-europe"></mdb-icon><span class="caret"></span>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a *ngFor="let lg of this.lang.getAvailable()" (click)="this.lang.setLang(lg)" class="dropdown-item waves-light" mdbWavesEffect href="#">{{lg}}</a>
+            </div>
+          </li>
+      </ul>
+    </links>  
+  </mdb-navbar>

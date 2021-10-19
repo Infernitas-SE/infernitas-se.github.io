@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { GithubService } from './services/github/github.service';
+import { LangService } from './services/lang/lang.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ghpagessite';
+  constructor(private titleService: Title, public ghService: GithubService, public lang: LangService)
+  {
+    this.titleService.setTitle("Infernitas SE")
+  }
 }
